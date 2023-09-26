@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types';
 
 function User(props) {
 
@@ -17,6 +18,9 @@ function User(props) {
     console.log(data.languages)
     console.log(data)
 
+    if (!data) {
+        return null;
+    }
 
     return (
         <div>
@@ -28,16 +32,24 @@ function User(props) {
             <div>Name : {data.name}</div>
             <div>Age : {data.age}</div>
             <div>Jobs : {data.jobs}</div>
-            <hr/>
             <h2>Languages :</h2>
-            <div> {data.languages.map((language, i) => {
+            <ul> {data.languages.map((language, i) => {
                 return (
-                    <div key={i}>{language}</div>
+                    <li key={i}>{language}</li>
                 )
-            })}</div>
+            })}</ul>
+            <hr/>
         </div>
     )
 }
+
+
+User.propTypes = {
+    data: PropTypes.shape({
+        name: PropTypes.string.isRequired,
+        age: PropTypes.number.isRequired,
+    })
+};
 
 export default User
 
