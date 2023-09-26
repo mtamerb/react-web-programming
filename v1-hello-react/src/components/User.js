@@ -13,11 +13,10 @@ function User(props) {
             </div>
         )*/
 
-    const {data} = props
+    const {data, title} = props
 
-    console.log(data.languages)
-    console.log(data)
-
+    console.log(data.title)
+    
     if (!data) {
         return null;
     }
@@ -28,7 +27,7 @@ function User(props) {
             <div>Age : {props.age}</div>
             <div>Jobs : {props.jobs}</div>*/}
 
-            <h1>User </h1>
+            <strong>{title}</strong>
             <div>Name : {data.name}</div>
             <div>Age : {data.age}</div>
             <div>Jobs : {data.jobs}</div>
@@ -46,10 +45,14 @@ function User(props) {
 
 User.propTypes = {
     data: PropTypes.shape({
-        name: PropTypes.string.isRequired,
+        name: PropTypes.string.isRequired, /* object : PropTypes.string*/
         age: PropTypes.number.isRequired,
+        jobs: PropTypes.string
     })
 };
 
+User.defaultProps = {
+    title: "Default Title"
+}
 export default User
 

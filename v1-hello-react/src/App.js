@@ -32,7 +32,7 @@ class App extends Component {
                 {/*
                 <User data = {user}/>
 */}
-                <User data={user[0]}/>
+                <User title="First User" data={user[0]}/>
                 <User data={user[1]}/>
                 <User data={user[2]}/>
             </div>
