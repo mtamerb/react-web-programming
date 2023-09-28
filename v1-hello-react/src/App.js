@@ -1,10 +1,8 @@
 import React, {Component} from 'react';
 import './App.css';
+import Counter from "./components/Counter";
 
-import User from "./components/User";
-
-
-const user = [{
+/*const user = [{
     name: "Tamer Bilici",
     age: 23,
     jobs: "Software Developer",
@@ -19,22 +17,26 @@ const user = [{
     age: 50,
     jobs: "Doctor",
     languages: ["Turkish"]
-}]
+}]*/
 
 
 class App extends Component {
     render() {
         return (
             <div>
-                {/* <User name="Tamer Bilici" age={23} jobs="Software Developer"/>
+
+                <Counter/>
+
+
+             {/*    <User name="Tamer Bilici" age={23} jobs="Software Developer"/>
                 <br></br>
-                    <User name="Ceyda Yılmaz" age={21} jobs="Software Developer"/>*/}
-                {/*
+                    <User name="Ceyda Yılmaz" age={21} jobs="Software Developer"/>
+
                 <User data = {user}/>
-*/}
+
                 <User title="First User" data={user[0]}/>
                 <User data={user[1]}/>
-                <User data={user[2]}/>
+                <User data={user[2]}/>*/}
             </div>
         );
     }
