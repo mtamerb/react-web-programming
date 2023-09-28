@@ -1,58 +1,29 @@
-import React from 'react'
-import PropTypes from 'prop-types';
+import React, {useState} from 'react'
 
-function User(props) {
-
-    /*
-    function User({data : {name , age , jobs}}) {
-        return (
-            <div>
-                <div>Name : {name}</div>
-                <div>Age : {age}</div>
-                <div>Jobs : {jobs}</div>
-            </div>
-        )*/
-
-    const {data, title} = props
-
-    console.log(data.title)
-    
-    if (!data) {
-        return null;
-    }
+function User() {
+    const [user, setUser] = useState({
+        name: "Tamer Bilici", age: 23,
+        jobs: "Software Developer", languages: ["Turkish", "English", "German"]
+    })
 
     return (
         <div>
-            {/*<div>Name : {props.name}</div>
-            <div>Age : {props.age}</div>
-            <div>Jobs : {props.jobs}</div>*/}
 
-            <strong>{title}</strong>
-            <div>Name : {data.name}</div>
-            <div>Age : {data.age}</div>
-            <div>Jobs : {data.jobs}</div>
-            <h2>Languages :</h2>
-            <ul> {data.languages.map((language, i) => {
-                return (
-                    <li key={i}>{language}</li>
-                )
-            })}</ul>
-            <hr/>
+            <div>{user.name}</div>
+            <div>{user.age}</div>
+            <div>{user.jobs}</div>
+            <div>{user.languages}</div>
+
+            <button onClick={()=> setUser(
+                {name: "Ceyda", age: 19, jobs: "Software Developer", languages: "Turkish"})
+            }>Change User</button>
+
+            <button onClick={()=> setUser(
+                {...user, languages: "Turkish"})
+            }>Change2 User</button>
+
         </div>
     )
 }
 
-
-User.propTypes = {
-    data: PropTypes.shape({
-        name: PropTypes.string.isRequired, /* object : PropTypes.string*/
-        age: PropTypes.number.isRequired,
-        jobs: PropTypes.string
-    })
-};
-
-User.defaultProps = {
-    title: "Default Title"
-}
 export default User
-

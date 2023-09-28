@@ -1,6 +1,10 @@
 import React, {Component} from 'react';
 import './App.css';
+import Form from "./components/Form";
+/*import User from "./components/User";*/
+/*
 import Counter from "./components/Counter";
+*/
 
 /*const user = [{
     name: "Tamer Bilici",
@@ -25,18 +29,17 @@ class App extends Component {
         return (
             <div>
 
+
+                <Form/>
+
+
+                {/*
                 <Counter/>
+*/}
 
-
-             {/*    <User name="Tamer Bilici" age={23} jobs="Software Developer"/>
-                <br></br>
-                    <User name="Ceyda Yılmaz" age={21} jobs="Software Developer"/>
-
-                <User data = {user}/>
-
-                <User title="First User" data={user[0]}/>
-                <User data={user[1]}/>
-                <User data={user[2]}/>*/}
+                {/*
+                <User/>
+*/}
             </div>
         );
     }
