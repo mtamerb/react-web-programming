@@ -1,8 +1,17 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 
 function Counter() {
     const [count, setCount] = useState(0)
     const [count2, setCount2] = useState(1)
+
+   useEffect(() => {
+      let interval = setInterval(() => {
+              console.log("interval")
+              setCount((prev) => prev + 1)
+       }, 1000)
+
+       return () => clearInterval(interval)
+   }, [])
 
     return (
         <div>

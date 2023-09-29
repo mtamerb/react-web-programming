@@ -1,10 +1,8 @@
-import React, {Component} from 'react';
+import React, {useState} from 'react';
 import './App.css';
-import Form from "./components/Form";
+/*import Form from "./components/Form";*/
 /*import User from "./components/User";*/
-/*
 import Counter from "./components/Counter";
-*/
 
 /*const user = [{
     name: "Tamer Bilici",
@@ -24,25 +22,17 @@ import Counter from "./components/Counter";
 }]*/
 
 
-class App extends Component {
-    render() {
-        return (
+function App() {
+    const [isVisible, setIsVisible] = useState(true)
+
+    return (
             <div>
-
-
-                <Form/>
-
-
-                {/*
-                <Counter/>
-*/}
-
-                {/*
-                <User/>
-*/}
+                {isVisible &&  <Counter/>}
+                <button onClick={() => setIsVisible(!isVisible)}>Display/Hide</button>
+                {/*<Form/>*/}
+                {/*<User/>*/}
             </div>
         );
-    }
 }
 
 export default App;
