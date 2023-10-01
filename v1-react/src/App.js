@@ -1,8 +1,9 @@
-import React, {useState} from 'react';
-import './App.css';
+import React from "react";
+import "./App.css";
 /*import Form from "./components/Form";*/
 /*import User from "./components/User";*/
-import Counter from "./components/Counter";
+// import Counter from "./components/Counter";
+import Users from "./components/Users";
 
 /*const user = [{
     name: "Tamer Bilici",
@@ -21,18 +22,19 @@ import Counter from "./components/Counter";
     languages: ["Turkish"]
 }]*/
 
-
 function App() {
-    const [isVisible, setIsVisible] = useState(true)
+//   const [isVisible, setIsVisible] = useState(true);
 
-    return (
-            <div>
-                {isVisible &&  <Counter/>}
-                <button onClick={() => setIsVisible(!isVisible)}>Display/Hide</button>
-                {/*<Form/>*/}
-                {/*<User/>*/}
-            </div>
-        );
+  return (
+    <div>
+      <Users key="users"/>
+      {/*{isVisible &&  <Counter/>}
+                    <button onClick={() => setIsVisible(!isVisible)}>Display/Hide</button>
+                    */}
+      {/*<Form/>*/}
+      {/*<User/>*/}
+    </div>
+  );
 }
 
 export default App;
