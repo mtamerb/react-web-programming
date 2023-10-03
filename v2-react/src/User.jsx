@@ -6,6 +6,7 @@ function User() {
   const [posts, setPosts] = useState([]);
 
   const getUser = async () => {
+   try{
     const { data: users } = await axios(
       "https://jsonplaceholder.typicode.com/users"
     );
@@ -18,6 +19,9 @@ function User() {
 
     console.log("users: ", users);
     console.log("posts", posts);
+   }catch(error){
+     console.log("error", error)
+   }
   };
 
   useEffect(() => {
