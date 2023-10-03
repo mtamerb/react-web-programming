@@ -1,6 +1,6 @@
 import React from 'react'
-import './App.css'
-import User from './User'
+import User from './Components/User.jsx'
+import './style/App.css'
 
 function App() {
 
